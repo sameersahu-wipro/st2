@@ -100,6 +100,9 @@ before_script:
   - sudo tail -n 30 /var/log/mongodb/mongod.log
   # Use custom RabbitMQ config which enables SSL / TLS listener on port 5671 with test certs
   - sudo cp scripts/travis/rabbitmq.config /etc/rabbitmq/rabbitmq.config
+  - sudo cp st2tests/st2tests/fixtures/ssl_certs/ca/ca_certificate_bundle.pem /etc/rabbitmq/ca_certificate_bundle.pem
+  - sudo cp st2tests/st2tests/fixtures/ssl_certs/server/server_certificate.pem /etc/rabbitmq/server_certificate.pem
+  - sudo cp st2tests/st2tests/fixtures/ssl_certs/server/private_key.pem /etc/rabbitmq/private_key.pem
   # Install rabbitmq_management RabbitMQ plugin
   - sudo service rabbitmq-server restart ; sleep 5
   - sudo rabbitmq-plugins enable rabbitmq_management
