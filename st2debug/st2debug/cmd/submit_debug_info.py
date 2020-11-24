@@ -522,7 +522,7 @@ class DebugInfoCollector(object):
 
         if cpu_info:
             core_count = len(cpu_info)
-            model = cpu_info[0]['model_name']
+            model = cpu_info[0]['vendor_id']
             system_information['hardware']['cpu'] = {
                 'core_count': core_count,
                 'model_name': model
