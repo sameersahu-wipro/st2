@@ -64,7 +64,7 @@ def get_cpu_info():
         name = split[0].replace('\t', '').strip().replace(' ', '_')
         value = split[1].replace('\t', '').strip()
 
-        if name == 'processor':
+        if name == 'vendor_id':
             # Info about new core / CPU
             item = {}
 
